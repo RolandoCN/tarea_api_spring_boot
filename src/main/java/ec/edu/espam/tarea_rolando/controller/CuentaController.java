@@ -26,7 +26,7 @@ public class CuentaController {
         return new ResponseEntity<>(cuentaServicio.guardar(cuenta), HttpStatus.CREATED);
     }
 
-    @PutMapping("/actualizar/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Cuenta> editar(@PathVariable Long id, @RequestBody @Valid Cuenta cuentaActualizada) {
         Cuenta buscaCuentaActualizar = cuentaServicio.obtenerPorId(id);
         if(buscaCuentaActualizar == null) {
